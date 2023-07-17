@@ -25,7 +25,7 @@ with col2:
     
 
 
-df = pd.read_excel('main/ESG_Score.xlsx')
+df = pd.read_excel('ESG_Score.xlsx')
 
 
 
