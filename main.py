@@ -25,9 +25,7 @@ with col2:
     
 
 
-url = 'https://github.com/nutdnuy/ESG_Stremlit/raw/main/ESG_Score.xlsx'
-response = requests.get(url)
-df = pd.read_excel(BytesIO(response.content))
+df = pd.read_excel('ESG_Score.xlsx')
 
 
 
