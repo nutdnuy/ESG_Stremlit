@@ -25,7 +25,7 @@ with col2:
     
 
 
-df = pd.read_excel('ESG_Score.xlsx', engine='openpyxl')
+df = pd.read_csv('ESG_Score.csv')
 
 
 
