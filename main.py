@@ -23,7 +23,16 @@ col1, col2, col3 = st.columns(3)
 with col2:
     st.subheader('')
     
-df = pd.read_excel("ESG_Score.xlsx")
+
+
+url = 'https://github.com/nutdnuy/ESG_Stremlit/raw/main/ESG_Score.xlsx'
+response = requests.get(url)
+df = pd.read_excel(BytesIO(response.content))
+
+
+
+
+
 df['dummy_W'] = np.where(df['ESG Combined Score']  > 0, 1, 0)
 
 
