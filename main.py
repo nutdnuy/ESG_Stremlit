@@ -108,3 +108,7 @@ if show_btn:
     st.title(' ESG Port :national_park:  ')
     st.title('   ')
     st.title(ESGScore_Port)
+    st.title('   ')
+    st.title(' นำ้หนักที่คำนวณ :national_park:  ')
+    st.title('   ')
+    st.title(ESG_W )
