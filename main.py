@@ -35,7 +35,8 @@ df['dummy_W'] = np.where(df['ESG Combined Score']  > 0, 1, 0)
 
 
 
-list_AssetClass =  [""] + df["Company Common Name"].tolist()
+list_AssetClass =  [""] + df["ธรแาพ"].tolist()
+
 
 
 with col1:
@@ -58,57 +59,118 @@ with col3:
 
 # ปุ่ม run
 
-show_btn = st.button("Show code!")
+show_btn = st.button("Simulation!")
+
+
+
+
+
 if show_btn:
     #df[df['Company Common Name'] == Asset_1 ]["ESG Combined Score"].tolist()[0] * Aweight_1  /100
 
+
     ESG_Score = 0
+    ESG_Score_E = 0 
+    ESG_Score_S = 0 
+    ESG_Score_G = 0 
     ESG_W = 0
 
-    if Asset_1 in df["Company Common Name"].tolist() :
-        if df[df['Company Common Name'] == Asset_1 ]["ESG Combined Score"].tolist()[0] * Aweight_1  /100  > 0:
-            ESG_Score += df[df['Company Common Name'] == Asset_1 ]["ESG Combined Score"].tolist()[0] * Aweight_1   
+
+
+
+    if Asset_1 in df["ธรแาพ"].tolist() :
+        if df[df["ธรแาพ"] == Asset_1 ]["ESG Combined Score"].tolist()[0] * Aweight_1  /100  > 0:
+            ESG_Score += df[df["ธรแาพ"] == Asset_1 ]["ESG Combined Score"].tolist()[0] * Aweight_1  
+            ESG_Score_E += df[df["ธรแาพ"] == Asset_1 ]["Environmental Pillar Score"].tolist()[0] * Aweight_1  
+            ESG_Score_S += df[df["ธรแาพ"] == Asset_1 ]["Social Pillar Score"].tolist()[0] * Aweight_1 
+            ESG_Score_G += df[df["ธรแาพ"] == Asset_1 ]["Governance Pillar Score"].tolist()[0] * Aweight_1 
             ESG_W += Aweight_1 
 
 
 
 
-    if Asset_2 in df["Company Common Name"].tolist() :
-        if df[df['Company Common Name'] == Asset_2 ]["ESG Combined Score"].tolist()[0] * Aweight_2  /100  > 0:
-            ESG_Score += df[df['Company Common Name'] == Asset_2 ]["ESG Combined Score"].tolist()[0] * Aweight_2  
+    if Asset_2 in df["ธรแาพ"].tolist() :
+        if df[df["ธรแาพ"] == Asset_2 ]["ESG Combined Score"].tolist()[0] * Aweight_2  /100  > 0:
+            ESG_Score += df[df["ธรแาพ"] == Asset_2 ]["ESG Combined Score"].tolist()[0] * Aweight_2 
+            ESG_Score_E += df[df["ธรแาพ"] == Asset_2 ]["Environmental Pillar Score"].tolist()[0] * Aweight_2
+            ESG_Score_S += df[df["ธรแาพ"] == Asset_2 ]["Social Pillar Score"].tolist()[0] * Aweight_2 
+            ESG_Score_G += df[df["ธรแาพ"] == Asset_2 ]["Governance Pillar Score"].tolist()[0] * Aweight_2 
             ESG_W += Aweight_2
 
 
 
-    if Asset_3 in df["Company Common Name"].tolist() :
-        if df[df['Company Common Name'] == Asset_3 ]["ESG Combined Score"].tolist()[0] * Aweight_3  /100  > 0:
-            ESG_Score += df[df['Company Common Name'] == Asset_3 ]["ESG Combined Score"].tolist()[0] * Aweight_3  
+    if Asset_3 in df["ธรแาพ"].tolist() :
+        if df[df["ธรแาพ"] == Asset_3 ]["ESG Combined Score"].tolist()[0] * Aweight_3  /100  > 0:
+            ESG_Score += df[df["ธรแาพ"] == Asset_3 ]["ESG Combined Score"].tolist()[0] * Aweight_3  
+            ESG_Score_E += df[df["ธรแาพ"] == Asset_3 ]["Environmental Pillar Score"].tolist()[0] * Aweight_3
+            ESG_Score_S += df[df["ธรแาพ"] == Asset_3 ]["Social Pillar Score"].tolist()[0] * Aweight_3
+            ESG_Score_G += df[df["ธรแาพ"] == Asset_3 ]["Governance Pillar Score"].tolist()[0] * Aweight_3
             ESG_W += Aweight_3
 
 
 
 
 
-    if Asset_4 in df["Company Common Name"].tolist() :
-        if df[df['Company Common Name'] == Asset_4 ]["ESG Combined Score"].tolist()[0] * Aweight_4  /100  > 0:
-            ESG_Score += df[df['Company Common Name'] == Asset_4 ]["ESG Combined Score"].tolist()[0] * Aweight_4  
+    if Asset_4 in df["ธรแาพ"].tolist() :
+        if df[df["ธรแาพ"] == Asset_4 ]["ESG Combined Score"].tolist()[0] * Aweight_4  /100  > 0:
+            ESG_Score += df[df["ธรแาพ"] == Asset_4 ]["ESG Combined Score"].tolist()[0] * Aweight_4  
+            ESG_Score_E += df[df["ธรแาพ"] == Asset_4 ]["Environmental Pillar Score"].tolist()[0] * Aweight_4
+            ESG_Score_S += df[df["ธรแาพ"] == Asset_4 ]["Social Pillar Score"].tolist()[0] * Aweight_4 
+            ESG_Score_G += df[df["ธรแาพ"] == Asset_4 ]["Governance Pillar Score"].tolist()[0] * Aweight_4
             ESG_W += Aweight_4
 
 
 
 
-    if Asset_5 in df["Company Common Name"].tolist() :
-        if df[df['Company Common Name'] == Asset_5 ]["ESG Combined Score"].tolist()[0] * Aweight_5  /100  > 0:
-            ESG_Score += df[df['Company Common Name'] == Asset_5 ]["ESG Combined Score"].tolist()[0] * Aweight_5  
+    if Asset_5 in df["ธรแาพ"].tolist() :
+        if df[df["ธรแาพ"] == Asset_5 ]["ESG Combined Score"].tolist()[0] * Aweight_5  /100  > 0:
+            ESG_Score += df[df["ธรแาพ"] == Asset_5 ]["ESG Combined Score"].tolist()[0] * Aweight_5  
+            ESG_Score_E += df[df["ธรแาพ"] == Asset_5 ]["Environmental Pillar Score"].tolist()[0] * Aweight_5
+            ESG_Score_S += df[df["ธรแาพ"] == Asset_5 ]["Social Pillar Score"].tolist()[0] * Aweight_5
+            ESG_Score_G += df[df["ธรแาพ"] == Asset_5 ]["Governance Pillar Score"].tolist()[0] * Aweight_5
             ESG_W += Aweight_5
-
-
+        
+        
     ESGScore_Port = ESG_Score / ESG_W 
+    
+    
+    
+    tab1, tab2 = st.tabs(["Portfolio ESG Score", "Portfolio Emission"])
+    
+    with tab1:
+    
+        col0, col1 = st.columns(2)
 
-    st.title(' ESG Port :national_park:  ')
-    st.title('   ')
-    st.title(ESGScore_Port)
-    st.title('   ')
-    st.title(' นำ้หนักที่คำนวณ :national_park:  ')
-    st.title('   ')
-    st.title(ESG_W )
+        with col0:
+            st.title(' ESG Port :national_park:  ')
+            st.title('   ')
+            st.title(int(ESGScore_Port))
+            st.title('   ')
+            st.subheader('Environmental Pillar Score')
+            st.subheader(' ')
+            st.subheader('Social Pillar Score')
+            st.subheader(' ')
+            st.subheader('Governance Pillar Score')
+            st.subheader(' ')
+            st.subheader(' ')
+
+        with col1:
+            st.title('%Port cal ESG ')
+            st.title('   ')
+            st.title(int(ESG_W) )
+            st.title('   ')
+
+            st.subheader(int(ESG_Score_E  / ESG_W ))
+            st.subheader(' ')
+            st.subheader(int(ESG_Score_S  / ESG_W) )
+            st.subheader(' ')
+            st.subheader(int(ESG_Score_G / ESG_W ))
+            st.subheader(' ')
+            st.subheader(' ')
+
+    
+    
+    with tab2:
+        st.header("Coming soon")
+    
+    
